@@ -1,21 +1,34 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import HomeScreen from './src/screens/HomeScreen';
+import MapScreen from './src/screens/MapScreen'
+import EatScreen from './src/screens/EatScreen'
+import MenuScreen from './src/screens/MenuScreen'
+import CartFood from './src/screens/CartFood'
+import { createStackNavigator } from '@react-navigation/stack';
+import { NavigationContainer } from '@react-navigation/native';
+import {Provider} from 'react-redux';
+import store from './src/redux/store';
+import ResultScreen from './src/screens/ResultScreen';
+
+const stack = createStackNavigator()
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <Provider store={store}>
+      <NavigationContainer>
+        <stack.Navigator
+          screenOptions={{
+            headerShown: false
+          }}
+        >
+          <stack.Screen name="HomeScreen" component={HomeScreen}/>
+          <stack.Screen name="MapScreen" component={MapScreen}/>
+          <stack.Screen name="EatScreen" component={EatScreen}/>
+          <stack.Screen name="MenuScreen" component={MenuScreen}/>
+          <stack.Screen name="CartFood" component={CartFood}/>
+          <stack.Screen name="ResultScreen" component={ResultScreen}/>
+        </stack.Navigator>
+      </NavigationContainer>
+    </Provider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
