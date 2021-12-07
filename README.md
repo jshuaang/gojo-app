@@ -1,4 +1,4 @@
-RESULT
+#GOJO APP RESULT
 
 ![gojo-result-1](https://user-images.githubusercontent.com/87524379/145062074-3ff5c834-e826-4db2-b733-9e91a134b02e.jpeg)
 ![gojo-result-2](https://user-images.githubusercontent.com/87524379/145062085-3f958f37-2bea-4846-b1ee-a5dd86b710d2.jpeg)
